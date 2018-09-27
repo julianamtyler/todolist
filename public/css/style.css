@@ -1,0 +1,123 @@
+body {
+    height: 98vh;   
+}
+
+header {
+    padding-top: 25px;
+    padding-left: 20px;
+    height: 100px;
+    width: 98%;
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: white;
+    background-image: linear-gradient(to right,rgb(139, 31, 72),rgb(84,28,124));
+}
+
+button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#main {
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 9px;
+}
+
+input {
+    margin-bottom: 10px;
+    border-color:rgb(187, 46, 131);
+    border-radius: 5px;
+    width: 410px;
+    height:20px;
+    font-size: 16px;
+    box-shadow: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#remove {
+    display: none;
+}
+
+.fa-square{
+    cursor: pointer;
+    color: black;
+}
+
+.fa-share{
+    cursor: pointer;
+    color: blue;
+}
+.fa-times {
+    cursor: pointer;
+    color: blue;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+li {
+    margin-bottom: 10px;
+    margin-left: 0px;
+    border-radius: 7px;
+}
+
+@media only screen and (min-width: 600px){
+    #main {
+        position: fixed;
+        margin-top: 20px;
+        margin-left: 300px;
+        margin-right: 300px;
+        padding: 10px;
+        border: 5px solid rgb(188, 191, 196);
+        border-radius: 10px;
+    }
+
+header {
+    font-size: 80px;
+}
+
+ul {
+        padding: 5px;
+}
+
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+input {
+    padding-left: 5px;
+    margin-left: 10px;
+    width: 500px;
+    height:25px;
+    font-size: 16px;
+    box-shadow: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+	box-shadow: none;
+}
+}

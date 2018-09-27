@@ -1,0 +1,25 @@
+{
+  "name": "unit6",
+  "version": "1.0.0",
+  "description": "to do list application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianamtyler/unit6.git"
+  },
+  "author": "Juliana Tyler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julianamtyler/unit6/issues"
+  },
+  "homepage": "https://github.com/julianamtyler/unit6#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.17",
+    "nodemon": "^1.18.4"
+  }
+}
