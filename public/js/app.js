@@ -1,15 +1,18 @@
 $(function () {
+    const state ={
+        todoList: []
+    }
 
     const render = function () {
         $('#todoitems').empty();
         $.ajax({ url: '/api/todolist', method: 'GET' })
-            .then(function (data) {
+            .then(function () {
                 let htmlstr = '';
-                data.forEach(item => { htmlstr += `<li class= "newtodo">${item.name}</li>` });
+                state.todoList.forEach(item => { htmlstr += `<li class= "newtodo">${item.name}</li>` });
                 $('#todoitem').html(htmlstr);
             })
-            .catch(function (errors) {
-                console.log(errors);
+            .catch(function (err) {
+                console.log(err);
             });
     }
 
@@ -17,7 +20,7 @@ $(function () {
         event.preventDefault();
 
         const newTodo = {
-            todoname: $('#new').val().trim()
+            todoname: $('#new').val()
             };
             
             for (let key in newTodo){
