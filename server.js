@@ -16,7 +16,8 @@ app.use(express.json());
 
 // Sets our server to use the public directory for static assets
 app.use(express.static(path.join(__dirname, 'public')));
-mongoose.connect('mongodb://localhost/todoItems', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://todo:12345a@ds119523.mlab.com:19523/heroku_5jwsfkz3', 
+{ useNewUrlParser: true });
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
 
@@ -26,4 +27,3 @@ app.listen(PORT, function () {
 })
 
 
-//   mongodb://bcuser:password1@ds115283.mlab.com:15283/heroku_wgb64nb2

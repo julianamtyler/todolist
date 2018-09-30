@@ -2,19 +2,8 @@ const render = function () {
     todoList()
 }
 
-const todoList = function (outputElement) {
-    const output = $(outputElement)
 
-    const todoItem = $("<li class='todoItem'>")
 
-    todoItem.append(
-        // $("<button class='fa-square'>"),
-        $("<p>").text(''),
-        // $("<button class='fa-times' id='deleteBtn'>").text('')
-    )
-    output.append(todoItem);
-
-}
 
 
 const newTodo = function(){
@@ -29,10 +18,19 @@ console.log(todoItems)
 const postItem = function(newtodo){
     $.ajax({url: '/api/todoItems', method: 'POST', data: newtodo})
     .then(function(todoItems){
-        console.log(todoItems)
+        //target div todoitems
+        let div = $('<div>').addClass('todoItems');
+      div.append(`${todo}.val()`);
+
     })
     
-    
+}
+
+const remove = function(remove){
+    $.ajax({url: '/api/todoItems', method: 'DELETE', data: remove})
+    .then(function(){
+
+    })
 }
 $('#submit').on('click',function(){
 
@@ -41,8 +39,4 @@ $('#submit').on('click',function(){
 })
 // render();
     
-
-
-    // <i class="far fa-square"></i> incomplete
-    // <i class="fas fa-check-square"></i> complete
-    // <i class="fas fa-times"></i> delete
+// <i class="fas fa-times"></i> delete
