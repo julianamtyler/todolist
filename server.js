@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Sets our server to use the public directory for static assets
 app.use(express.static(path.join(__dirname, 'public')));
-
+mongoose.connect('mongodb://localhost/todoItems', { useNewUrlParser: true });
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
 

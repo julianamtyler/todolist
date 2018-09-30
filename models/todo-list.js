@@ -3,11 +3,13 @@ const Schema = mongoose.Schema;
 
 
 
-const todoSchema = new Schema({
+const todoSchema = new mongoose.Schema({
     todoname:{
     type: String,
-    }  
-});
-const todoItems = mongoose.model('todolist',todoSchema);
-
-module.exports = todoItems;
+    },
+    done: {
+        type: Boolean
+    }},
+{ collection: 'todoItems'}
+)
+module.exports = mongoose.model('todolist',todoSchema);
