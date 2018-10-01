@@ -1,29 +1,29 @@
-const render = function () {
-    todoList()
-}
+$(function(){
 
 
 
-
-
-const newTodo = function(){
+const newTodo = function(event){
+    event.preventDefault();
     $.ajax({url: '/api/todoItems', method: 'GET'})
     .then(function(todoItems){
 console.log(todoItems)
     });
 }
 
-// newTodo();
 
 const postItem = function(newtodo){
     $.ajax({url: '/api/todoItems', method: 'POST', data: newtodo})
     .then(function(todoItems){
         //target div todoitems
-        let div = $('<div>').addClass('todoItems');
-      div.append(`${todo}.val()`);
-
+        let div = $('#submit').on('click',function(){
+            $('#todoItems').append($('<li>', {
+                 text: $('#todo').val()}
+                 ));
+        });
+        return div
     })
-    
+
+    $('#todoItems')
 }
 
 const remove = function(remove){
@@ -36,7 +36,11 @@ $('#submit').on('click',function(){
 
    const val =  {todoname: $('#todo').val(),done: false}
     postItem(val)
-})
+});
+});
+
+// newTodo();
 // render();
     
-// <i class="fas fa-times"></i> delete
+/* <i class=
+    "fas fa-times"></i> delete */
