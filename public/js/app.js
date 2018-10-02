@@ -10,17 +10,17 @@ console.log(todoItems)
     });
 }
 
-
+// newTodo(add);
 const postItem = function(newtodo){
     $.ajax({url: '/api/todoItems', method: 'POST', data: newtodo})
     .then(function(todoItems){
         //target div todoitems
-        let div = $('#submit').on('click',function(){
+        let add = $('#submit').on('click',function(){
             $('#todoItems').append($('<li>', {
                  text: $('#todo').val()}
                  ));
         });
-        return div
+    //adding item the times i clicked on submit
     })
 
     $('#todoItems')
@@ -28,9 +28,10 @@ const postItem = function(newtodo){
 
 const remove = function(remove){
     $.ajax({url: '/api/todoItems', method: 'DELETE', data: remove})
-    .then(function(){
-
-    })
+    // .then(function(){
+    //     $('fa-times').on('click', function(){
+    //         $('li').remove(this)
+    //     })})
 }
 $('#submit').on('click',function(){
 
@@ -39,7 +40,7 @@ $('#submit').on('click',function(){
 });
 });
 
-// newTodo();
+
 // render();
     
 /* <i class=
