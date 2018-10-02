@@ -2,25 +2,21 @@ $(function(){
 
 
 
-const newTodo = function(event){
-    event.preventDefault();
+const newTodo = function(){
+    // event.preventDefault();
     $.ajax({url: '/api/todoItems', method: 'GET'})
     .then(function(todoItems){
 console.log(todoItems)
     });
 }
 
-// newTodo(add);
+newTodo();
 const postItem = function(newtodo){
     $.ajax({url: '/api/todoItems', method: 'POST', data: newtodo})
     .then(function(todoItems){
         //target div todoitems
-        let add = $('#submit').on('click',function(){
-            $('#todoItems').append($('<li>', {
-                 text: $('#todo').val()}
-                 ));
-        });
-    //adding item the times i clicked on submit
+        $('#todoItems').append($(`<li>`, {text: $('#todo').val()}));
+    //a doesnt add the first time and then adds the times on submit
     })
 
     $('#todoItems')
