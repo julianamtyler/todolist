@@ -3,7 +3,6 @@ $(function(){
 
 
 const newTodo = function(){
-    // event.preventDefault();
     $.ajax({url: '/api/todoItems', method: 'GET'})
     .then(function(todoItems){
 console.log(todoItems)
@@ -14,30 +13,33 @@ newTodo();
 const postItem = function(newtodo){
     $.ajax({url: '/api/todoItems', method: 'POST', data: newtodo})
     .then(function(todoItems){
-        //target div todoitems
-        $('#todoItems').append($(`<li>`, {text: $('#todo').val()}));
-    //a doesnt add the first time and then adds the times on submit
-    })
+        $('#todoItems').append($(`<div><input type="checkbox"/>,{newtodo},<i class="fas fa-times"></i></div>`)
+        // $('#todoItems').append($(`<input type="checkbox"/>`))
+        // .append($(`<li>` ,{text: $('#todo').val()}, ))
+        // .append(`<i class="fas fa-times"></i>`)
+        // ;
+    )})
+   
 
     $('#todoItems')
 }
 
 const remove = function(remove){
     $.ajax({url: '/api/todoItems', method: 'DELETE', data: remove})
-    // .then(function(){
-    //     $('fa-times').on('click', function(){
-    //         $('li').remove(this)
-    //     })})
+    .then(function(){
+        // $('fa-times').on('click', function(){
+        //     $(this).remove()})
+        })
 }
 $('#submit').on('click',function(){
 
    const val =  {todoname: $('#todo').val(),done: false}
     postItem(val)
+
+//  remove();   
 });
 });
 
 
-// render();
-    
 /* <i class=
     "fas fa-times"></i> delete */
