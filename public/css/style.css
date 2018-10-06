@@ -60,6 +60,7 @@ input[type="checkbox"]{
     cursor: pointer;
     color: blue;
     font-size: 25px;
+    margin-left: 5px;
 }
 
 

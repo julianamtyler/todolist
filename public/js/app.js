@@ -14,7 +14,7 @@ $(function () {
     const postItem = function (newtodo) {
         $.ajax({ url: '/api/todoItems', method: 'POST', data: newtodo })
             .then(function (todoItems) {
-                let todoname = $('#todo').val()
+                let todoname = $('#todo').val();
                 $('#todoItems').append($(`<div><input class="checkbox" type="checkbox"/>${todoname}<i class="fas fa-times"></i></div>`))
             })
 
@@ -33,6 +33,7 @@ $(function () {
                 })
             })
     }
+
     $('#submit').on('click', function () {
 
         const val = { todoname: $('#todo').val(), done: false }
