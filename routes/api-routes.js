@@ -21,7 +21,7 @@ module.exports = function (app) {
 
   });
 
-  app.put('/api/todoItems', function (req, res) {
+  app.put('/api/todoItems', function(req, res) {
     db.todoItems.findOneAndUpdate({ todoname: req.body.todoname }, { $set: { todoname: req.body.todoname } })
       .then(function (dbTodo) {
         res.json(dbTodo);
@@ -30,4 +30,13 @@ module.exports = function (app) {
         res.json(errors);
       });
   });
-};
+
+  // app.delete('api/todoItems', function(req,res){
+  //   let id = req.params.id;
+  //   let todoItems = db.get().todoItems('todoItems');
+  //   todoItems.deleteOne({_id: new mongo.ObjectId(id)}, function(err,results){
+
+  //   })
+   
+      // res.json(success: id)
+}
