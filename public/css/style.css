@@ -63,6 +63,28 @@ input[type="checkbox"]{
     margin-left: 5px;
 }
 
+li {
+    border-radius: 10px;
+    margin-top: 5px;
+    list-style: none;
+    background-color: rgb(235, 239, 243);
+}
+.list {
+    position:relative;
+}
+.checkbox{
+    /* position: absolute; */
+    top: 6px;
+}
+.fa-times{
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+b{
+    font-weight: 100px; 
+    font-size: 20px;
+}
 
 
 @media only screen and (min-width: 600px){
