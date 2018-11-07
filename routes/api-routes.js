@@ -31,12 +31,13 @@ module.exports = function (app) {
       });
   });
 
-  // app.delete('api/todoItems', function(req,res){
-  //   let id = req.params.id;
-  //   let todoItems = db.get().todoItems('todoItems');
-  //   todoItems.deleteOne({_id: new mongo.ObjectId(id)}, function(err,results){
-
-  //   })
+  app.delete('api/todoItems/:id', function(req,res){
+    let id = req.params.id;
+    // let todoItems = db.get().todoItems('todoItems');
+    db.todoItems.findByIdAndRemove({todoname: req.params.index})
+      .then(function(){
+          res.json({success:true})
+      })
    
-      // res.json(success: id)
+})
 }
