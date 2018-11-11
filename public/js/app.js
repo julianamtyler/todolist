@@ -5,7 +5,7 @@ $(function () {
         $('#todoitems').empty();
         $.ajax({ url: '/api/todoItems', method: 'GET' })
             .then(function (todoList) {
-                todoList.forEach(e => {$(`#todoItems`).append($(`<li><input class="checkbox" type="checkbox"/><b>${e.todoname}</b><i class="fas fa-times"></li></div>`))})
+                todoList.forEach(e => {$(`#todoItems`).append($(`<li><input class="checkbox" type="checkbox"/><b>${e.todoname}</b><i class="fas fa-times"></li>`))})
                 console.log(todoList)
             });
     }

@@ -62,6 +62,9 @@ input[type="checkbox"]{
     color: blue;
     font-size: 25px;
     margin-left: 5px;
+    float:right;
+    margin-right: 10px;
+    margin-top: 5px;
 }
 li {
     border-radius: 10px;
